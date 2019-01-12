@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title our complaints page
+        link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css')
+        
+    body
+        div.column.is-10.is-offset-1
+            each q in queryArray
+                div.card
+                    div.card-image
+                        figuare.image.is-4by3
+                            img(src=q.filePath[0])
+                    div.card-content
+                        div.media
+                            div.media-content
+                                p.title.is-4= q.mobileNo
+                        div.content
+                            p= q.pincode
+                            p= q.question
+                        div.content
+                            a(href='http://localhost:3000/'+q.filePath[1]) Play Audio
+                            //- p Nope...
+                        br
+                    footer.card-footer
+                            a(href='/queryAnswers?id='+q._id).card-footer-item Answers
+                br
+                br

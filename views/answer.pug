@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        title welcome page
+        link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css')
+    body
+        -var id = reference
+        -console.log(id);
+        div.column.is-8.is-offset-2
+            div.notification
+                form(method='POST', action='/answer?id='+id, enctype='multipart/form-data')
+                    div.column.is-4.is-offset-4
+                        //- div.is-size-1-desktop
+                        //-     div.field
+                        //-         label(for="mobileNo") Mobile No
+                        //- div.control
+                        //-     input(type="text" name="mobileNo").input.is-medium
+                        //- div.is-size-1-desktop
+                        //-     div.field
+                        //-         label(for='picture') Upload
+                        div.is-size-1-desktop
+                            div.control
+                                div.file.is-large
+                                    label.file-label
+                                        input(type='file' name='picture' accept='image/*').file-input
+                                        span.file-cta
+                                            span.file-icon
+                                                i.fas.fa-upload
+                                            span.file-label
+                                                p Choose a file
+                            br
+                            div.control
+                                div.file.is-large
+                                    label.file-label
+                                        input(type='file' name='recording' accept='audio/*').file-input
+                                        span.file-cta
+                                            span.file-icon
+                                                i.fas.fa-upload
+                                            span.file-label
+                                                p Select an audio file
+                        br
+                        br
+                        div.is-size-1-desktop
+                            div.control.has-icons.right
+                                textarea(placeholder='Explain here', name='answer', rows='3').textarea.is-medium
+                        br
+                        button(type='submit').button.is-dark Submit

@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title answers page
+        link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css')
+    body
+        div.column.is-10.is-offset-1
+            each i in particularQueryAnswers
+                div.card
+                    div.card-image
+                        figuare.image.is-4by3
+                            img(src=i.filePath[0])
+                    div.card-content
+                        div.content
+                            p= i.answer
+                        div.content
+                            a(href='http://localhost:3000/'+q.filePath[1]) Play Audio
+                br
+                br
+            

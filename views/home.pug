@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        title home page
+        link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css')
+        //- script(type='text/javascript')
+        //-     document.alert('Successful');
+    body
+        div.column.is-8.is-offset-2
+            a(href='/queriesPublic').button.is-dark LocalQueries
+            br
+            br
+            a(href='/queriesPrivate').button.is-dark History
+            br
+            br
+            div.notification
+                form(method='POST', action='/home' enctype='multipart/form-data')
+                    div.column.is-4.is-offset-4
+                        //- div.is-size-1-desktop
+                        //-     div.field
+                        //-         label(for="mobileNo") Mobile No
+                        //- div.control
+                        //-     input(type="text" name="mobileNo").input.is-medium
+                        //- br
+                        //-     div.field
+                        //-         label(for='picture') Upload
+                        //- div.control
+                        //-     input(type='file' name='picture' accept='image/*')
+                        div.is-size-1-desktop
+                            div.control
+                                div.file.is-large
+                                    label.file-label
+                                        input(type='file' name='picture' accept='image/*').file-input
+                                        span.file-cta
+                                            span.file-icon
+                                                i.fas.fa-upload
+                                            span.file-label
+                                                p Choose an image
+                            br
+                            div.control
+                                div.file.is-large
+                                    label.file-label
+                                        input(type='file' name='recording' accept='audio/*').file-input
+                                        span.file-cta
+                                            span.file-icon
+                                                i.fas.fa-upload
+                                            span.file-label
+                                                p Select an audio file
+                        //- br
+                        //- div.is-size-1-desktop
+                        //-     div.field
+                        //-         label(for="pincode") PINCODE
+                        //- dic.control
+                        //-     input(type="text" name="pincode").input.is-medium
+                        br
+                        br
+                        div.is-size-1-desktop
+                            div.control.has-icons.right
+                                textarea(placeholder='Explain here', name='query', rows='3').textarea.is-medium
+                        br
+                        button(type='submit' id='button').button.is-dark Submit
+                        //- div.modal(id='page-modal')
+                        //-     div.modal-background
+                        //-         div.modal-content
+                        //-             <!--Enter Message-->
+                        //-         button(aria-label='close').modal-close.is-large

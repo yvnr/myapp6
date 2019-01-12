@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title signup page
+        link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css')
+    body
+        div.column.is-8.is-offset-2
+            div.notification
+                form(method='POST', action='/signUp')
+                    div.column.is-4.is-offset-4
+                        div.is-size-1-desktop
+                            div.field
+                                label(for='mobileNo') MobileNo:
+                        div.control.has-icons.right
+                            input(type='text' name='mobileNo').input.is-medium
+                        div.is-size-1-desktop
+                            div.field
+                                label(for='pincode') PINCODE:
+                        div.control.has-icons.right
+                            input(type='text' name='pincode').input.is-medium
+                        div.is-size-1-desktop
+                            div.field
+                                label(for='password') password:
+                        div.control.has-icons.right
+                            input(type='password' name='password').input.is-medium
+                        br 
+                        button(type='submit').button.is-dark Sign Up
